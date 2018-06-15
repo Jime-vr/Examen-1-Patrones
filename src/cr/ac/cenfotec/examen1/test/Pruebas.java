@@ -10,6 +10,8 @@ import cr.ac.cenfotec.examen1.logica.Carta;
 import cr.ac.cenfotec.examen1.logica.Naipe;
 import cr.ac.cenfotec.examen1.logica.NombreCarta;
 import cr.ac.cenfotec.examen1.logica.PaloCarta;
+import cr.ac.cenfotec.examen1.logica.Repartidor;
+
 import java.util.List;
 
 public class Pruebas {
@@ -38,5 +40,18 @@ public class Pruebas {
 		int tamannoList = tempNaipe.size();
 		
 		assertEquals(tamannoList, na.creacionNaipe().size());
+	}
+	
+	@Test
+	public void naipeBarajado() throws Exception{
+		
+		Naipe naipe = new Naipe ();
+		List <Carta> naipeOrdenado = naipe.creacionNaipe();
+		
+		Repartidor repartidor = new Repartidor();
+		List <Carta> barajaNaipe =  repartidor.barajaNaipe();
+		
+		assertFalse(naipeOrdenado == barajaNaipe);
+		
 	}
 }
