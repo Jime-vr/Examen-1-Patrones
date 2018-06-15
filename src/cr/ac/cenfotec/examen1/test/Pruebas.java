@@ -7,8 +7,10 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import cr.ac.cenfotec.examen1.logica.Carta;
+import cr.ac.cenfotec.examen1.logica.Naipe;
 import cr.ac.cenfotec.examen1.logica.NombreCarta;
 import cr.ac.cenfotec.examen1.logica.PaloCarta;
+import java.util.List;
 
 public class Pruebas {
 
@@ -26,5 +28,15 @@ public class Pruebas {
 		Carta cardTest = new Carta(NombreCarta.As, PaloCarta.Escudo, 1);
 		
 		assertEquals(cardTest.getValor(), card.nuevaCarta(NombreCarta.As, PaloCarta.Escudo).getValor());
+	}
+	
+	@Test
+	public void naipeDeCartas() throws Exception{
+		Naipe na = new Naipe();
+		
+		List <Carta> tempNaipe = na.creacionNaipe();
+		int tamannoList = tempNaipe.size();
+		
+		assertEquals(tamannoList, na.creacionNaipe().size());
 	}
 }
