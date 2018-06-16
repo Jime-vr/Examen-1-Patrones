@@ -12,7 +12,6 @@ public class Jugador {
 	}
 	
 	public Jugador(String nombre, ArrayList<Carta> mano) {
-		super();
 		this.nombre = nombre;
 		this.mano = mano;
 	}

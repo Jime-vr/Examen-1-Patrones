@@ -7,6 +7,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import cr.ac.cenfotec.examen1.logica.Carta;
+import cr.ac.cenfotec.examen1.logica.Mesa;
 import cr.ac.cenfotec.examen1.logica.Naipe;
 import cr.ac.cenfotec.examen1.logica.NombreCarta;
 import cr.ac.cenfotec.examen1.logica.PaloCarta;
@@ -53,5 +54,15 @@ public class Pruebas {
 		
 		assertFalse(naipeOrdenado == barajaNaipe);
 		
+	}
+	
+	@Test
+	public void errorCamposMesa() throws Exception{
+		
+		Mesa campos = new Mesa();
+		
+		assertFalse(campos.agregarJugador(5));
+		assertFalse(campos.agregarJugador(0));
+		assertTrue(campos.agregarJugador(2));
 	}
 }
