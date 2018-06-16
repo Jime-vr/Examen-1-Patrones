@@ -13,6 +13,7 @@ import cr.ac.cenfotec.examen1.logica.NombreCarta;
 import cr.ac.cenfotec.examen1.logica.PaloCarta;
 import cr.ac.cenfotec.examen1.logica.Repartidor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Pruebas {
@@ -73,5 +74,18 @@ public class Pruebas {
 		Repartidor rep = new Repartidor();
 		
 		assertFalse(cartaGenerada == rep.darCarta());
+	}
+	
+	@Test
+	public void darCartasJugadores() throws Exception{
+		Mesa mesita = new Mesa();
+		ArrayList<String> nombres = new ArrayList<String>();
+		nombres.add("Jimena");
+		nombres.add("Cristina");
+		
+		int tamanno = 2;
+		
+		assertEquals(tamanno, mesita.empezarAJugar21(nombres).size());
+		
 	}
 }
