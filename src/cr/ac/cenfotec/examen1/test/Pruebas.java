@@ -65,4 +65,13 @@ public class Pruebas {
 		assertFalse(campos.agregarJugador(0));
 		assertTrue(campos.agregarJugador(2));
 	}
+	
+	@Test
+	public void cartaJugador() throws Exception{
+		Carta cartaGenerada = new Carta(NombreCarta.Ka, PaloCarta.Estrella, 10);
+
+		Repartidor rep = new Repartidor();
+		
+		assertFalse(cartaGenerada == rep.darCarta());
+	}
 }
