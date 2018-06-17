@@ -88,4 +88,21 @@ public class Pruebas {
 		assertEquals(tamanno, mesita.empezarAJugar21(nombres).size());
 		
 	}
+	
+	@Test
+	public void ganador() throws Exception{
+		Mesa mesita = new Mesa();
+		
+		String nombreTemp = "Ricardo";
+		
+		ArrayList<Carta> manoTemp = new ArrayList<Carta>();
+		Carta cartaTemp1 = new Carta(NombreCarta.Ka, PaloCarta.Estrella, 10);
+		Carta cartaTemp2 = new Carta(NombreCarta.As, PaloCarta.Gota, 1);
+		
+		manoTemp.add(cartaTemp1);
+		manoTemp.add(cartaTemp2);
+		
+		
+		assertEquals(nombreTemp, Mesa.sacarGanador(manoTemp, "Ricardo"));
+	}
 }
